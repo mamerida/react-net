@@ -6,13 +6,15 @@ import ProyectarContenido2 from './ProyectarContenido2';
 import ContenidoDinamico from './ContenidoDinamico';
 import { callbackify } from 'node:util';
 import FormularioTexto from './FormularioTexto';
+import EjemploUseEffect from './EjemploUseEffect';
 
 
 
 
 function App() {
   const [texto ,setTexto] = useState(' valor por defecto')
-  const [checked , setChecked] =useState(false);
+  const [checked , setChecked] =useState(true);
+  const [checkeduf , setCheckeduf] =useState(true);
   const manejarClick = () => console.log("click")
 
   const ManejarKeyUp = (e :string) =>{
@@ -75,7 +77,20 @@ function App() {
 
 
     {/* introducir imagne  */}
-    <img alt="logo reack" src={imagenURL}/> 
+    {/* <img alt="logo reack" src={imagenURL}/>  */}
+
+        {/* importo el componente Ej use effect */}
+        
+        <input type="checkbox" 
+        onChange={(e)=>setCheckeduf(e.currentTarget.checked)}
+        checked = {checkeduf}
+        /> Mostrar componente useEffect
+        {checkeduf ? <EjemploUseEffect /> :null }
+
+
+
+    <br></br>
+
     <h1 className ="rojo"> Hola Mundo</h1>
     {/* ejecutar una accion react desde funcion aparte onMouse onClick son eventos de html */}
     <button 
@@ -94,6 +109,7 @@ function App() {
   <FormularioTexto ManejarKeyUp={(e:string) => ManejarKeyUp(e)} />
 
 
+
     {/* Obtener una variable de lo que escribe el usuario */}
     {/*<div> escribo el valor de la variable no se actualiza por que no se vuelve a renderizar 
       {texto}
@@ -106,8 +122,7 @@ function App() {
     <div>
       <input type = "checkbox"
       //Lo uso para cambiar el estado del check  
-      onChange={(e) =>setChecked(e.currentTarget.checked)}
-      checked ={checked}/> Este es un checkbox
+      onChange={(e) =>setChecked(e.currentTarget.checked)} checked ={checked}/> Este es un checkbox
 
     </div>
     </>
