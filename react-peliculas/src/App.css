@@ -1,0 +1,8 @@
+/* cuando empiezan con . es una clase */
+.cuadradoRojo{
+  background-color: RED;
+  width: 50px;
+  height: 50px;
+  margin-left: 1rem;
+
+}

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "5ocACIt7VGfZGT2B0EgK464loKtbgeRZat2xEVvtu1hJmm9Wx8YEwz+pKjcm25Dcys4DBprnzjC4+rIq6/tJmQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\msmer\\Documents\\Cursos programacion\\React\\1 - Modulo 1\\peliculasApi\\peliculasApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\msmer\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\msmer\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\msmer\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\msmer\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\msmer\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\msmer\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
