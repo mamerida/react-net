@@ -7,6 +7,8 @@ import ContenidoDinamico from './ContenidoDinamico';
 import { callbackify } from 'node:util';
 import FormularioTexto from './FormularioTexto';
 import EjemploUseEffect from './EjemploUseEffect';
+import ValorContext from './ValorContext';
+import Abuelo from './Abuelo';
 
 
 
@@ -86,6 +88,16 @@ function App() {
         checked = {checkeduf}
         /> Mostrar componente useEffect
         {checkeduf ? <EjemploUseEffect /> :null }
+
+    {/* react hook useContent donde un modulo se suscribe y tiene acceso a los datos del mismo */}
+    {/* lo que usamos para poder darle un valor es un proveedor para eso Provider  con value ={algo} */}
+
+    <ValorContext.Provider value ={texto}>
+      {/* elijo abuelo por que es el que importa al padre  */}
+      <Abuelo></Abuelo>
+
+    </ValorContext.Provider>
+
 
 
 
