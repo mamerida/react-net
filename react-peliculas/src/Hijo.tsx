@@ -9,7 +9,7 @@ export default function Hijo(){
     return(
         <>
         <h3>Componente hijo el valor de contexto es: {valor} </h3>
-        <h2>Hago una prueba para ver que todo ande bien </h2>
+        
         </>
         
     )

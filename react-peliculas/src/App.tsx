@@ -9,6 +9,7 @@ import FormularioTexto from './FormularioTexto';
 import EjemploUseEffect from './EjemploUseEffect';
 import ValorContext from './ValorContext';
 import Abuelo from './Abuelo';
+import ErrorBoundary from './ErrorBoundary'
 
 
 
@@ -39,7 +40,7 @@ function App() {
   //copiar contenido de UI
   const calificaciones = [
     {nombre :"Mario", calificacion :86},
-    {nombre :"Estela", calificacion :50},
+    {nombre :"Estela", calificacion :-1},
     {nombre :"Fernando", calificacion :99}
 
   ]
@@ -137,6 +138,19 @@ function App() {
       onChange={(e) =>setChecked(e.currentTarget.checked)} checked ={checked}/> Este es un checkbox
 
     </div>
+
+    {/* prueba errorBoundary  */}
+    {/* Para poder evitar que mate toda la pagina el error coloco el codigo dentro del errorBoundary */}
+    {calificaciones.map (cal =>
+      
+      <ErrorBoundary  key ={cal.nombre} errorUI={<h3>Error al mostrar la calificacion de </h3>}>
+      <ContenidoDinamico  {...cal}/>
+      </ErrorBoundary>
+      
+      )}    
+
+
+
     </>
   )
 }
