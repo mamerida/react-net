@@ -3,6 +3,11 @@ import './App.css';
 import { landingPageDTO } from './peliculas/peliculas.model';
 import ListadoPeliculas from './peliculas/ListadoPeliculas';
 import Button from './../src/utils/Button'
+import Menu from './utils/Menu'
+import { Route, Switch } from 'react-router';
+import IndiceGeneros from './generos/indiceGeneros';
+import { BrowserRouter } from 'react-router-dom';
+import LandingPage from './LandingPage'
 
 
 // npm i bootstrap@4.6 para instalar bootstrap en la app
@@ -12,42 +17,10 @@ function App() {
 
   //declaro la varible peliculas para poder cambiar el estado en pantalla
 
-  const [peliculas,setPeliculas] = useState<landingPageDTO>({})
+  
 
   //creo el time out para colocar un git de espera y usar patron dto
-  useEffect(()=>{
-    const timerId = setTimeout(()=>{
-      setPeliculas({peliculasCartelera :
-        [
-          {
-            id:2,
-            titulo:"Mohana",
-            poster:'https://m.media-amazon.com/images/M/MV5BMjI4MzU5NTExNF5BMl5BanBnXkFtZTgwNzY1MTEwMDI@._V1_UX182_CR0,0,182,268_AL_.jpg'
-          },
-          {
-            id:3,
-            titulo:"Minios",
-            poster:'https://m.media-amazon.com/images/M/MV5BMTg2MTMyMzU0M15BMl5BanBnXkFtZTgwOTU3ODk4NTE@._V1_UX182_CR0,0,182,268_AL_.jpg'
-          },
-        ],peliculasProximamente:
-        [
-          {
-            id:4,
-            titulo:"Avatar",
-            poster:'https://m.media-amazon.com/images/M/MV5BODc5YTBhMTItMjhkNi00ZTIxLWI0YjAtNTZmOTY0YjRlZGQ0XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_UX182_CR0,0,182,268_AL_.jpg'
-          },
-          {
-            id:5,
-            titulo:"Demon Slayer",
-            poster:'https://m.media-amazon.com/images/M/MV5BODI2NjdlYWItMTE1ZC00YzI2LTlhZGQtNzE3NzA4MWM0ODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_UX182_CR0,0,182,268_AL_.jpg'
-          },
-        ]
-
-      })
-
-    },500)
-      return () => clearTimeout(timerId);
-  })
+  
 
 
   // declaro pelicula de prueba y voy al return para que me la renderise
@@ -68,15 +41,30 @@ function App() {
     // </>
     //aplico boostrat con el className
     <>
+    <BrowserRouter>
+    
+    <Menu/>
+    {/* coloco el container por arriba del switch para que sea global a todas las pestañas */}
     <div className="container">
-
-    <Button>Mi componente boton</Button>
-
-    <h3>Peliculas en cartelera </h3>
-    <ListadoPeliculas peliculas={peliculas.peliculasCartelera}/>
-    <h3>Proximamente</h3>
-    <ListadoPeliculas peliculas={peliculas.peliculasProximamente}/>
+    {/* esto es lo que me permite mostrar un componente u otro segun la ruta */}
+    <Switch>
+    
+      {/* se especifica la ruta tengo que usar exact al no especificar el path*/}
+      <Route exact path="/">
+        <LandingPage />
+      </Route>
+      {/* al especficar el path no hace falta colocar el exact */}
+      <Route path="/generos">
+        <IndiceGeneros/>
+      </Route>
+    </Switch>
     </div>
+    </BrowserRouter>
+
+    {/* <Button>Mi componente boton</Button> */}
+
+
+    
     </>
   )
 }
