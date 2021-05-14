@@ -4,3 +4,11 @@ export interface pelicula{
     titulo:string;
     poster:string;
 }
+
+
+export interface landingPageDTO{
+    peliculasCartelera?: pelicula[];
+    peliculasProximamente?:pelicula[];
+
+
+}
