@@ -1,10 +1,11 @@
 import React, { useEffect, useState }  from 'react';
 import './App.css';
 import { landingPageDTO } from './peliculas/peliculas.model';
-import ListadoPeliculas from './peliculas/ListadoPeliculas'
+import ListadoPeliculas from './peliculas/ListadoPeliculas';
+import Button from './../src/utils/Button'
 
 
-
+// npm i bootstrap@4.6 para instalar bootstrap en la app
 
 
 function App() {
@@ -65,11 +66,17 @@ function App() {
     // <>
     // <PeliculaIndividual pelicula={peliculaPrueba}/>
     // </>
+    //aplico boostrat con el className
     <>
+    <div className="container">
+
+    <Button>Mi componente boton</Button>
+
     <h3>Peliculas en cartelera </h3>
     <ListadoPeliculas peliculas={peliculas.peliculasCartelera}/>
     <h3>Proximamente</h3>
     <ListadoPeliculas peliculas={peliculas.peliculasProximamente}/>
+    </div>
     </>
   )
 }
