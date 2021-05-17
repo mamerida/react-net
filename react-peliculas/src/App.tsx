@@ -80,3 +80,5 @@ export default App;
       // <Route path="/generos">
       //   <IndiceGeneros/>
       // </Route>
+      
+//instalar formularios npm install formik@2.2.6
