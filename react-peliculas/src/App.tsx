@@ -7,7 +7,8 @@ import Menu from './utils/Menu'
 import { Route, Switch } from 'react-router';
 import IndiceGeneros from './generos/indiceGeneros';
 import { BrowserRouter } from 'react-router-dom';
-import LandingPage from './LandingPage'
+import LandingPage from './LandingPage';
+import rutas from './route-config';
 
 
 // npm i bootstrap@4.6 para instalar bootstrap en la app
@@ -48,15 +49,11 @@ function App() {
     <div className="container">
     {/* esto es lo que me permite mostrar un componente u otro segun la ruta */}
     <Switch>
-    
-      {/* se especifica la ruta tengo que usar exact al no especificar el path*/}
-      <Route exact path="/">
-        <LandingPage />
-      </Route>
-      {/* al especficar el path no hace falta colocar el exact */}
-      <Route path="/generos">
-        <IndiceGeneros/>
-      </Route>
+     {/* utilizo funcion map para generar cada route segun cada elemento de mi arreglo */}
+      {rutas.map(ruta => <Route key ={ruta.path} path={ruta.path} exact ={ruta.exact}>
+        <ruta.componente></ruta.componente>
+      </Route>)}
+
     </Switch>
     </div>
     </BrowserRouter>
@@ -74,3 +71,12 @@ export default App;
 
 
 // Estado : datos de un componente que ante un cambio se vuelven a renderizar
+
+      // {/* se especifica la ruta tengo que usar exact al no especificar el path*/}
+      // <Route exact path="/">
+      //   <LandingPage />
+      // </Route>
+      // {/* al especficar el path no hace falta colocar el exact */}
+      // <Route path="/generos">
+      //   <IndiceGeneros/>
+      // </Route>
