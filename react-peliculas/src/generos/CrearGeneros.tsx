@@ -1,7 +1,10 @@
 
 import { Link,useHistory } from "react-router-dom"
 import Button from "../utils/Button";
-import {Formik,Form, Field} from 'formik'
+import {Formik,Form} from 'formik'
+import * as Yup from 'yup'
+import FromGropuText from '../utils/FormGroupText'
+import FormGroupText from "../utils/FormGroupText";
 
 export default function CrearGenero(){
     // Navegar por el usuario con un useHistory
@@ -16,13 +19,16 @@ export default function CrearGenero(){
         onSubmit={values =>{
             console.log(values)
         }}
+        // creo las validaciones 
+        //validationSchema={Yup.object()}
+        validationSchema={Yup.object({
+            //comoco campo:Yup.el tipo de dato.validacion
+            nombre:Yup.string().required('Este campo es requerido')
+
+        })}
         >
             <Form>
-                <div className="form-group">
-                    <label htmlFor="nombre">Nombre</label>
-                    {/* field permite sincornizar el valor en el lavel con el initial value de formik */}
-                    <Field name="nombre" className="form-control"/>
-                </div>
+                <FormGroupText campo ="nombre" label ="Nombre" placeholder="nombre genero"/>
                 <Button type="submit"> Salvar</Button>
                 <Link className="btn btn-secondary" to='/generos'>Cancelar</Link>
             </Form>

@@ -82,3 +82,4 @@ export default App;
       // </Route>
       
 //instalar formularios npm install formik@2.2.6
+//instalar yup para hacer validaciones npm i yup@0.32.9
