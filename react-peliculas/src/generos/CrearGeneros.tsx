@@ -23,7 +23,7 @@ export default function CrearGenero(){
         //validationSchema={Yup.object()}
         validationSchema={Yup.object({
             //comoco campo:Yup.el tipo de dato.validacion
-            nombre:Yup.string().required('Este campo es requerido')
+            nombre:Yup.string().required('Este campo es requerido').primeraLetraMayuscula()
 
         })}
         >

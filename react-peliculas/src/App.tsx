@@ -1,14 +1,19 @@
-import React, { useEffect, useState }  from 'react';
+// import React, { useEffect, useState }  from 'react';
 import './App.css';
-import { landingPageDTO } from './peliculas/peliculas.model';
-import ListadoPeliculas from './peliculas/ListadoPeliculas';
-import Button from './../src/utils/Button'
+// import { landingPageDTO } from './peliculas/peliculas.model';
+// import ListadoPeliculas from './peliculas/ListadoPeliculas';
+// import Button from './../src/utils/Button'
 import Menu from './utils/Menu'
 import { Route, Switch } from 'react-router';
-import IndiceGeneros from './generos/indiceGeneros';
+// import IndiceGeneros from './generos/indiceGeneros';
 import { BrowserRouter } from 'react-router-dom';
-import LandingPage from './LandingPage';
+// import LandingPage from './LandingPage';
 import rutas from './route-config';
+
+import configurarValidaciones from './Validaciones'
+
+configurarValidaciones();
+
 
 
 // npm i bootstrap@4.6 para instalar bootstrap en la app
