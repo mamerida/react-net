@@ -57,8 +57,8 @@ export default function FiltroPeliculas(){
                     </div>
                     <Button
                         className="btn btn-primary mb-2 mx-sm-3"
-                        type="submit"
-                        // onClick={() => FormikProps.submitForm()}
+                        //formas de declarar submit
+                        onClick={() => FormikProps.submitForm()}
                     >Filtrar</Button>
                     <Button
                         className="btn btn-danger mb-2"
