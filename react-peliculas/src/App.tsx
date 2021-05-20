@@ -90,3 +90,5 @@ export default App;
 //instalar yup para hacer validaciones npm i yup@0.32.9
 // instalar markdown para darle formato a los textos npm i react-markdown 
 // esto se usa para poder usarlo con typescrit typed-react-markdown
+// npm install leaflet react-leaflet
+// npm install -D @types/leaflet
