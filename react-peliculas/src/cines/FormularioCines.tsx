@@ -16,7 +16,7 @@ export default function FormularioCines(props:formularioCinesProps){
         >
             {(formikProps) =>(
                 <Form>
-                    <FormGroupText label="Nombre" campo ="nombre"></FormGroupText>
+                    <FormGroupText label="Nombre" campo ="nombre  "></FormGroupText>
                     <Button disabled={formikProps.isSubmitting} type ="submit">Salvar</Button>
                     <Link className="btn btn-secondary" to="/cines"> Cancelar </Link>
                 </Form>
