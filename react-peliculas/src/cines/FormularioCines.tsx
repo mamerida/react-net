@@ -4,9 +4,21 @@ import * as Yup from "yup";
 import FormGroupText from "../utils/FormGroupText";
 import Button from "../utils/Button";
 import {Link} from "react-router-dom";
-import Mapa from './../utils/Mapa'
+import MapaFormulario from './../utils/MapaFormulario'
+import { coordenadaDTO } from "../utils/coordenadas.model";
 
-export default function FormularioCines(props:formularioCinesProps){
+export default function sFormularioCines(props:formularioCinesProps){
+    //maneja las coordenadas a la hora de mostrar 
+    function transformarCoordenada() : coordenadaDTO[] | undefined {
+        if(props.modelo.latitud && props.modelo.longitud){
+            const respuesta:coordenadaDTO = {
+                lat:props.modelo.latitud,
+                lng: props.modelo.longitud
+            }
+            return [respuesta];
+        }
+            return undefined
+    }
     return(
         <Formik
             initialValues={props.modelo}
@@ -18,7 +30,9 @@ export default function FormularioCines(props:formularioCinesProps){
             {(formikProps) =>(
                 <Form>
                     <FormGroupText label="Nombre" campo ="nombre  "></FormGroupText>
-                    <Mapa/>
+                    <MapaFormulario campoLat="latitud" campoLng="longitud" 
+                        coordenadas={transformarCoordenada()}
+                    />
                     <Button disabled={formikProps.isSubmitting} type ="submit">Salvar</Button>
                     <Link className="btn btn-secondary" to="/cines"> Cancelar </Link>
                 </Form>

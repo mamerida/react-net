@@ -1,9 +1,9 @@
-import { Link, useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Button from "../utils/Button";
 import { Formik, Form, FormikHelpers } from 'formik'
 import * as Yup from 'yup'
 import FormGroupText from "../utils/FormGroupText";
-import React from 'react';
+// import React from 'react';
 import {generoCreacionDTO} from './generos.model'
 
 export default function FormularioGeneros(props: formularioGenerosProps) {

@@ -16,7 +16,7 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon= DefaultIcon; 
 
 export default function Mapa(props:MapaProps){
-    const[coordenadas,setCoordenadas] = useState<coordenadaDTO[]>([])
+    const[coordenadas,setCoordenadas] = useState<coordenadaDTO[]>(props.coordenadas)
     return(
         <MapContainer
             center ={[-32.926668, -68.820631]} zoom = {18} style={{height:props.height}}
@@ -26,7 +26,8 @@ export default function Mapa(props:MapaProps){
                 url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
             />
             <ClickMapa setPunto={coordenadas =>{
-                setCoordenadas([coordenadas])
+                setCoordenadas([coordenadas]);
+                props.manejarClickMapa(coordenadas);
             }}/>
             {coordenadas.map(coordenadas => <Marcador key={coordenadas.lat + coordenadas.lng}
                 {...coordenadas}
@@ -54,6 +55,8 @@ interface clickMapaProps{
 
 interface MapaProps{
     height:string;
+    coordenadas:coordenadaDTO[];
+    manejarClickMapa(coordenadas:coordenadaDTO):void
 }
 Mapa.defaultProps={
     height:'500px'

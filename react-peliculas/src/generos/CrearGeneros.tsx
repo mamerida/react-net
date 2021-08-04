@@ -1,10 +1,10 @@
 
-import { Link, useHistory } from "react-router-dom"
+// import {  useHistory } from "react-router-dom"
 import FormularioGeneros from './FormularioGeneros'
 
 export default function CrearGenero() {
     // Navegar por el usuario con un useHistory
-    const history = useHistory();
+    // const history = useHistory();
     return (
 
         <>

@@ -5,6 +5,16 @@ export interface pelicula{
     poster:string;
 }
 
+export interface peliculaCreationDTO{
+    titulo:string;
+    enCines: boolean;
+    trailer: string;
+    /* el ? significa opcional   */
+    fechaLanzamiento?:Date;
+    poster?:File;
+    posterURL?: string; 
+}
+
 
 export interface landingPageDTO{
     peliculasCartelera?: pelicula[];

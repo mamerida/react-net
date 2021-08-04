@@ -1,4 +1,4 @@
-import { FormikContext, useFormikContext } from "formik"
+import { useFormikContext } from "formik"
 import { ChangeEvent, useState } from "react"
 
 export default function FormGroupImagen(props: FormGroupImagen) {

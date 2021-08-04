@@ -1,7 +1,7 @@
 import {pelicula} from './peliculas.model'
 import PeliculaIndividual from './PeliculaIndividual'
 import css from './ListadoPeliculas.module.css'
-import Cargando from './../utils/Cargando'
+// import Cargando from './../utils/Cargando'
 import ListadoGenerico from './../utils/ListadoGenerico'
 
 
